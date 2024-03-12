@@ -16,8 +16,8 @@ function ThankYouPage() {
                 <div className="text-center text-white p-4 space-y-2">
                     <h1 className='text-3xl font-bold uppercase skewed-text'>THANK YOU!!!</h1>
                     <h3 className=''>Cảm ơn bạn đã mua hàng và tin tưởng Anh Watch!</h3>
-                    <p>Hãy đợi chiếc đồng hồ bling bling đến với bạn trong vài ngày tới ♥♥♥</p>
-                    <p>Anh Watch sẽ luôn đợi bạn ở những sản phẩm tiếp theo</p>
+                    <p>Hãy đợi chiếc đồng hồ bling bling đến với bạn <br/> trong vài ngày tới ♥♥♥</p>
+                    <p className="whitespace-nowrap"><span className="font-bold">Anh Watch</span> sẽ luôn đợi bạn ở những sản phẩm tiếp theo</p>
                 </div>
             </div>
             <footer className='bg-[#B06930] w-[420px] p-4 mx-auto text-white font-semibold'>
