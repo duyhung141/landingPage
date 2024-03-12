@@ -6,6 +6,7 @@ import './carousel.css';
 import './slide.css'
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
 import BoltIcon from '@mui/icons-material/Bolt';
+import BoxTime from "../BoxTime/BoxTime";
 function Slide() {
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
@@ -86,6 +87,7 @@ function Slide() {
                             </div>
                             <div className="text-center flex items-center">
                                 <p className=''>Kết thúc sau</p>
+                                <BoxTime initialMinutes={3} initialSeconds={10} />
                             </div>
 
                         </div>

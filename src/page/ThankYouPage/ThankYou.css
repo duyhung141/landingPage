@@ -1,0 +1,48 @@
+
+
+/* Adding an animation to make it alternate between left and right skew */
+@keyframes skew-animation {
+    0% {
+        transform: skew(-15deg);
+    }
+    10% {
+        transform: skew(-10deg);
+    }
+    20% {
+        transform: skew(-5deg);
+    }
+    30% {
+        transform: skew(0deg);
+    }
+    40% {
+        transform: skew(5deg);
+    }
+    50% {
+        transform: skew(10deg);
+    }
+    50% {
+        transform: skew(15deg);
+    }
+    60% {
+        transform: skew(10deg);
+    }
+    70% {
+        transform: skew(5deg);
+    }
+    80% {
+        transform: skew(0deg);
+    }
+    90% {
+        transform: skew(-5deg);
+    }
+    100% {
+        transform: skew(-10deg);
+    }
+}
+
+.skewed-text {
+    /* CSS transforms to skew the text */
+    transform: skew(-10deg);
+    display: inline-block;
+    animation: skew-animation 1.4s infinite; /* Adjust the time as needed */
+}
