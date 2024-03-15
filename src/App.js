@@ -11,7 +11,7 @@ function App() {
       <div className="">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HomePage/>} />
+            <Route path="/product/:id" element={<HomePage/>} />
             <Route path="/thank-you" element={<ThankYouPage/>} />
               <Route path="*" element={<h1>Not Found</h1>} />
           </Routes>

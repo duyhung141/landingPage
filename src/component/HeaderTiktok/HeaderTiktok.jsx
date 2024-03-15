@@ -1,7 +1,8 @@
 import React from "react"
 import StarIcon from '@mui/icons-material/Star';
 
-function HeaderTiktok() {
+function HeaderTiktok(props) {
+    const {data} = props;
     return (
         <>
             <div className="">
@@ -9,7 +10,7 @@ function HeaderTiktok() {
                     <h1 className='uppercase font-bold text-2xl ml-1'>
                         <span
                             className='w-[100px] h-fit mr-1 p-2 bg-[#FF2B79] rounded-xl text-xs text-white font-semibold italic'>Sale sốc!!!</span>
-                        Loa Bluetooth A36 Mini aqeryqe
+                        {data?.name}
                     </h1>
                 </div>
                 <div className="flex items-center justify-between mt-1">
@@ -38,7 +39,7 @@ function HeaderTiktok() {
                         <span className='font-bold '>Sản phẩm hàng đầu</span>
                     </div>
                     <div className="truncate w-[50%]">
-                        <span className='w-full'>Loa Bluetooth A36 Miniqưersyq</span>
+                        <span className='w-full'>{data?.name}</span>
                     </div>
                 </div>
 

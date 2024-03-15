@@ -7,7 +7,9 @@ import './slide.css'
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
 import BoltIcon from '@mui/icons-material/Bolt';
 import BoxTime from "../BoxTime/BoxTime";
-function Slide() {
+import {formatMoney, getPriceSale} from "../../functions/helperFunctions";
+function Slide(props) {
+    const {data} = props;
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
     const settingsNav1 = {
@@ -37,44 +39,30 @@ function Slide() {
     return (
         <div>
             <div className="mx-auto w-[420px]">
-                {/*<h2>Slider Syncing (AsNavFor)</h2>*/}
-                {/*<h4>First Slider</h4>*/}
                 <div className="w-full">
                     <Slider {...settingsNav1} asNavFor={nav2} ref={slider => (sliderRef1 = slider)}>
-                        <div>
-                            <img className={"w-[420px] h-[400px] object-cover"}
-                                 src={'https://w.ladicdn.com/s750x750/5c7362c6c417ab07e5196b05/ngon-2-20231115070435-rbkkw.jpg'}/>
-                        </div>
-                        <div>
-                            <img className={"w-[420px] h-[400px] object-cover"}
-                                 src="https://w.ladicdn.com/s750x750/5c7362c6c417ab07e5196b05/ngon-3-20231115070435-1xbhj.jpg"
-                                 alt=""/>
-                        </div>
-                        <div>
-                            <img className={"w-[420px] h-[400px] object-cover"}
-                                 src="https://w.ladicdn.com/s750x750/5c7362c6c417ab07e5196b05/ngon-4-20231115070435-g36lc.jpg"
-                                 alt=""/>
-                        </div>
-                        <div>
-                            <img className={"w-[420px] h-[400px] object-cover"}
-                                 src="https://w.ladicdn.com/s750x750/5e2112886defce3c604…w52-resize-jpeg_800_800-20231103073402-r7djk.jpeg"
-                                 alt=""/>
-                        </div>
-
+                        {
+                            data?.urlList?.map((item) => {
+                              return(
+                                  <div>
+                                      <img className={"w-[420px] h-[400px] object-cover"}
+                                           src={item}/>
+                                  </div>
+                              )
+                            })
+                        }
                     </Slider>
                 </div>
-                {/*<div className="w-full bg-yellow-500 h-[100px] -mt-4">*/}
 
-                {/*</div>*/}
                 <div className="w-full grid grid-cols-2 relative -mt-4">
                     <div className="h-16 bg-[#A62100] p-2 relative">
                         <div className="ml-2">
-                            <p className='text-xl text-white font-bold'><span><LoyaltyIcon/></span>199.000đ</p>
+                            <p className='text-xl text-white font-bold'><span><LoyaltyIcon/></span>{formatMoney(data?.price)}</p>
                         </div>
                         <div className="ml-1 flex items-center">
-                            <p className='text-white line-through decoration-white'>299.000đ</p>
+                            <p className='text-white line-through decoration-white'>{getPriceSale(data?.price, data?.percentSale)}</p>
                             <div className="h-5 w-8 bg-red-500 ml-2"><p
-                                className='text-center text-sm text-white font-semibold'>50%</p>
+                                className='text-center text-sm text-white font-semibold'>{data?.percentSale}%</p>
                             </div>
                         </div>
                     </div>
@@ -95,9 +83,6 @@ function Slide() {
 
                 </div>
 
-
-                {/*<h4>Second Slider</h4>*/}
-                {/*Slide ở dưới*/}
                 <Slider
                     {...settingsNav2}
                     asNavFor={nav1}
@@ -106,29 +91,18 @@ function Slide() {
                     swipeToSlide={true}
                     focusOnSelect={true}
                 >
-                    <div>
-                        <img className="w-[120px] h-[120px] object-cover"
-                             src={'https://w.ladicdn.com/s750x750/5c7362c6c417ab07e5196b05/ngon-2-20231115070435-rbkkw.jpg'}/>
-                    </div>
-                    <div>
-                        <img className="w-[120px] h-[120px] object-cover"
-                             src="https://w.ladicdn.com/s750x750/5c7362c6c417ab07e5196b05/ngon-3-20231115070435-1xbhj.jpg"
-                             alt=""/>
-                    </div>
-                    <div>
-                        <img className="w-[120px] h-[120px] object-cover"
-                             src="https://w.ladicdn.com/s750x750/5c7362c6c417ab07e5196b05/ngon-4-20231115070435-g36lc.jpg"
-                             alt=""/>
-                    </div>
-                    <div>
-                        <img className="w-[120px] h-[120px] object-cover"
-                             src="https://w.ladicdn.com/s750x750/5e2112886defce3c604…w52-resize-jpeg_800_800-20231103073402-r7djk.jpeg"
-                             alt=""/>
-                    </div>
+                    {
+                        data?.urlList?.map((item) => {
+                            return(
+                                <div>
+                                    <img className="w-[120px] h-[120px] object-cover"
+                                         src={item}/>
+                                </div>
+                            )
+                        })
+                    }
                 </Slider>
-
             </div>
-
         </div>
     );
 }

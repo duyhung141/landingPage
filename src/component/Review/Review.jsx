@@ -3,8 +3,10 @@ import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import RatingBar from "./RatingBar";
 import Comment from "./Comment";
+import {formatDate} from "../../functions/helperFunctions";
 
-function Review() {
+function Review(props) {
+    const {data} = props;
     const ratings = [
         {stars: 5, percentage: 0.98},
         {stars: 4, percentage: 0.02},
@@ -13,16 +15,15 @@ function Review() {
         {stars: 1, percentage: 0},
     ];
 
-    const comments = [
-        {
-            username: 'boongbong1009',
-            avatar: 'https://down-vn.img.susercontent.com/file/vn-11134233-7r98o-lqh91p0t6ypjcc_tn',
-            rating: 5,
-            date: '2021-10-16',
-            text: 'Giao hàng nhanh (5-6 ngày). Nhà mình fan Unilever nên mua đồ của hàng xài rất yên tâm, chất lượng. Mùi này thơm lắm nhà mình, bịch to 3,6 kg giá chỉ 60k là quá rẻ. Đang túi xài tiện, shop đóng gói kỹ, hàng nguyên ko bị bể',
-            thumbnail: 'https://down-bs-vn.img.susercontent.com/de15e56bafacff7c137210b79f327f4c.webp',
-        },
-    ];
+    const comments = data?.map(comment => ({
+        username: 'boongbong1009',
+        avatar: 'https://down-vn.img.susercontent.com/file/vn-11134233-7r98o-lqh91p0t6ypjcc_tn',
+        date: comment?.createdAt,
+        thumbnail: 'https://down-bs-vn.img.susercontent.com/de15e56bafacff7c137210b79f327f4c.webp',
+        rating: 5,
+        text: comment?.comment
+    }));
+
     return (
         <>
             <div className="bg-[#F0F0F0] p-3">
@@ -59,7 +60,7 @@ function Review() {
                                 username={comment?.username}
                                 avatar={comment?.avatar}
                                 rating={comment?.rating}
-                                date={comment?.date}
+                                date={formatDate(comment?.date)}
                                 text={comment?.text}
                                 thumbnail={comment?.thumbnail}
                             />
@@ -67,7 +68,6 @@ function Review() {
                     </div>
                     {/*EndComment*/}
                 </div>
-
             </div>
 
         </>
