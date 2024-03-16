@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a8bb23d6.css",
+    "main.js": "/static/js/main.234fffd9.js",
+    "static/js/453.0927db7a.chunk.js": "/static/js/453.0927db7a.chunk.js",
+    "static/media/logo.webp": "/static/media/logo.78a0bb370a7996e25184.webp",
+    "static/media/icons8-shopee-48.svg": "/static/media/icons8-shopee-48.5e6f3e9abc64803711a72a4379d56f81.svg",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/icons8-google.svg": "/static/media/icons8-google.9a7800d06783d80a1c12249a8ca58e9d.svg",
+    "index.html": "/index.html",
+    "static/media/icons8-facebook-48.svg": "/static/media/icons8-facebook-48.5e1cb4b86ac3f872dadcbde3ed31cd4b.svg",
+    "main.a8bb23d6.css.map": "/static/css/main.a8bb23d6.css.map",
+    "main.234fffd9.js.map": "/static/js/main.234fffd9.js.map",
+    "453.0927db7a.chunk.js.map": "/static/js/453.0927db7a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8bb23d6.css",
+    "static/js/main.234fffd9.js"
+  ]
+}
