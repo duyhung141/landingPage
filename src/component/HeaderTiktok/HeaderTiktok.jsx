@@ -78,12 +78,12 @@ function HeaderTiktok(props) {
                     </p>
                 </div>
 
-                <div className="h-28 m-2 border-b">
+                <div className="h-16 m-2 border-b">
                     <h5 className='font-bold'>Chính sách đổi trả</h5>
                     <p className='mt-1 text-xs text-[#A6A6A6]'>
                         Trả hàng trong vòng 7 ngày - Hủy đơn dễ dàng - Hoàn toàn miễn phí
                     </p>
-                    <a href="" type='button' className='mt-2 bg-[#F22666] uppercase text-white font-bold px-4 py-3 rounded'>Mua ngay</a>
+                    {/*<a href="" type='button' className='mt-2 bg-[#F22666] uppercase text-white font-bold px-4 py-3 rounded'>Mua ngay</a>*/}
                 </div>
             </div>
         </>
