@@ -75,7 +75,7 @@ function Slide(props) {
                             </div>
                             <div className="text-center flex items-center">
                                 <p className=''>Kết thúc sau</p>
-                                <BoxTime initialMinutes={3} initialSeconds={10} />
+                                <BoxTime initialMinutes={48} initialSeconds={39} />
                             </div>
 
                         </div>

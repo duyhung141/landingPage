@@ -2,9 +2,11 @@ import React from "react"
 import ProductSuggestCard from "./ProductSuggestCard";
 import {getPriceSale} from "../../functions/helperFunctions";
 import Slider from "react-slick";
+import {useParams} from "react-router-dom";
 
 function ProductSuggest(props) {
     const data = props?.data;
+    const {id} = useParams()
     const settings = {
         dots: true,
         infinite: false,
@@ -12,14 +14,17 @@ function ProductSuggest(props) {
         slidesToShow: 2,
         slidesToScroll: 2
     };
-    const products = data?.map((product) => ({
-        id: product?._id,
-        name: product?.name,
-        image: product?.urlList[0],
-        price: product?.price,
-        salePrice: getPriceSale(product?.price, product?.percentSale),
-        soldQuantity: "26.8k"
-    }));
+    const products = data
+        ?.filter(product => product?._id !== id)
+        .map(product => ({
+            id: product?._id,
+            name: product?.name,
+            image: product?.urlList[0],
+            price: product?.price,
+            salePrice: getPriceSale(product?.price, product?.percentSale),
+            soldQuantity: "26.8k"
+        }));
+    // console.log(products, id)
     return (
         <>
             {/*<div className="grid grid-cols-2">*/}
