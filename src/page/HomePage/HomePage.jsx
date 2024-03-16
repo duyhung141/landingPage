@@ -39,7 +39,7 @@ function HomePage() {
                 <Review data={reviews}/>
                 <InfoShop/>
                 <ProductDetail data={product}/>
-                <Order productId={id}/>
+                <Order productId={id} productPrice={product?.price}/>
                 <ProductSuggest data={products}/>
             </div>
         </>

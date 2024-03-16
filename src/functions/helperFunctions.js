@@ -22,3 +22,8 @@ export const getPriceSale = (price, percentSale) => {
     return formatMoney(previousSalePrice * 1000);
 }
 
+export const isValidPhoneNumber = (phone) => {
+    // Biểu thức chính quy kiểm tra số điện thoại theo định dạng Việt Nam
+    const vietnamPhoneNumberRegex = /^(0|\+84)(\d{9,10})$/;
+    return vietnamPhoneNumberRegex.test(phone);
+}

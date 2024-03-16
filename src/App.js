@@ -4,6 +4,7 @@ import HomePage from "./page/HomePage/HomePage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ThankYouPage from "./page/ThankYouPage/ThankYouPage";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 

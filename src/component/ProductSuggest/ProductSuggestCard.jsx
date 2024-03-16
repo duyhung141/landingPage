@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function ProductSuggestCard({id, image, name, originalPrice, salePrice, soldQuantity}) {
     return (
-        <Link to={"/product/" + id}>
+        <a href={"/product/" + id}>
             <div className="max-w-sm m-1 rounded overflow-hidden shadow-lg bg-white rounded-lg">
                 <img className="w-[190px] h-[190px] object-cover" src={image} alt={name}/>
                 <div className="px-6 py-2">
@@ -23,7 +23,7 @@ function ProductSuggestCard({id, image, name, originalPrice, salePrice, soldQuan
                     className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Đã bán {soldQuantity}</span>
                 </div>
             </div>
-        </Link>
+        </a>
     );
 }
 
