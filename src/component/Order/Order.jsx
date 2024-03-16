@@ -5,6 +5,8 @@ import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
 import Toast from "../Toast/Toast";
 import {isValidPhoneNumber} from "../../functions/helperFunctions";
+import {css} from '@emotion/react';
+import {ClipLoader} from 'react-spinners';
 
 function Order(props) {
     const {productId, productPrice} = props;
@@ -12,6 +14,7 @@ function Order(props) {
     const [phone, setPhone] = useState();
     const [address, setAddress] = useState();
     const [quantity, setQuantity] = useState();
+    const [isLoading, setIsLoading] = useState(false);
     const Toastobjects = {
         position: "top-right",
         autoClose: 5000,
@@ -30,7 +33,7 @@ function Order(props) {
     })
     const submitOrder = async (e) => {
         e.preventDefault();
-        if(!name || !phone || !address || !quantity) {
+        if (!name || !phone || !address || !quantity) {
             if (!toast.isActive(toastId.current)) {
                 toastId.current = toast.error(
                     "Vui lòng điền đầy đủ thông tin",
@@ -48,6 +51,7 @@ function Order(props) {
             }
             return;
         }
+        setIsLoading(true)
         const data = {
             customer: name,
             phoneCustomer: phone,
@@ -59,9 +63,10 @@ function Order(props) {
         await mutationCreateOrder.mutate(data);
     }
 
-    const {error, isLoading, isSuccess, isError} = mutationCreateOrder;
+    const {error, isSuccess, isError} = mutationCreateOrder;
     useEffect(() => {
         if (!error && isSuccess) {
+            setIsLoading(false)
             history('/thank-you')
         }
     }, [isSuccess])
@@ -94,8 +99,11 @@ function Order(props) {
                 </div>
                 <div className="mt-2 text-center">
                     <button className='bg-[#EE4D2D] text-white font-semibold px-3 py-2 rounded'
-                            onClick={submitOrder}>
+                            onClick={submitOrder} disabled={isLoading}>
                         Mua ngay để nhận ưu đãi
+                        {isLoading && (
+                            <ClipLoader loading={isLoading} size={15}/>
+                        )}
                     </button>
                 </div>
 

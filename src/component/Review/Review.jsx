@@ -16,14 +16,13 @@ function Review(props) {
     ];
 
     const comments = data?.map(comment => ({
-        username: 'boongbong1009',
-        avatar: 'https://down-vn.img.susercontent.com/file/vn-11134233-7r98o-lqh91p0t6ypjcc_tn',
+        username: comment?.user ?? 'boongbong1009',
+        avatar: comment?.avatar ?? 'https://down-vn.img.susercontent.com/file/vn-11134233-7r98o-lqh91p0t6ypjcc_tn',
         date: comment?.createdAt,
-        thumbnail: 'https://down-bs-vn.img.susercontent.com/de15e56bafacff7c137210b79f327f4c.webp',
-        rating: 5,
+        thumbnail: comment?.thumbnail,
+        rating: comment?.rating ?? 5,
         text: comment?.comment
     }));
-
     return (
         <>
             <div className="bg-[#F0F0F0] p-3">
