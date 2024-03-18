@@ -29,7 +29,7 @@ function Review(props) {
                 <h3 className='text-[#3E1980] font-bold uppercase text-lg my-1'>Đánh giá khách hàng</h3>
                 <div className="bg-white">
                     {/*Rating*/}
-                    <div className="p-2 grid grid-cols-5 ">
+                    <div className="p-2 xs:grid xs:grid-cols-5 ">
                         <div className="col-span-2 border-r text-center p-1">
                             <h4 className='font-bold uppercase'>Đánh giá trung bình</h4>
                             <p className='text-[#FF1616] text-lg font-bold '>4.9/5</p>
@@ -38,7 +38,7 @@ function Review(props) {
                                 value={4.9}
                                 readOnly
                                 precision={0.1}
-                                emptyIcon={<StarIcon style={{opacity: 0.5}} fontSize="inherit"/>}
+                                emptyIcon={<StarIcon style={{opacity: 0.5}} fontSize="small"/>}
                             />
                             <p className='text-sm text-[#A6A6A6]'>(12.8k đánh giá)</p>
                         </div>

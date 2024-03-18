@@ -13,6 +13,15 @@ function ProductSuggest(props) {
         speed: 500,
         slidesToShow: 2,
         slidesToScroll: 2
+        // responsive: [
+        //     {
+        //         breakpoint: 374,
+        //         settings: {
+        //             slidesToShow: 1,
+        //             slidesToScroll: 1,
+        //         }
+        //     }
+        // ]
     };
     const products = data
         ?.filter(product => product?._id !== id)

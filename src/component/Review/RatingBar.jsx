@@ -6,7 +6,7 @@ const RatingBar = ({stars, percentage}) => {
         <div className="flex items-center space-x-2">
             <div className="flex items-center">
                 {stars}
-                <StarIcon className="h-5 w-5 text-gray-500"/>
+                <StarIcon fontSize={"small"} className="h-5 w-5 text-gray-500"/>
             </div>
             <div className="w-full bg-gray-300 rounded-full h-2.5 dark:bg-gray-700">
                 <div

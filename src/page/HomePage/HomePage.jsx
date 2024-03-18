@@ -33,7 +33,7 @@ function HomePage() {
     }, [id]);
     return (
         <>
-            <div className="mx-auto w-[420px] p-3">
+            <div className="mx-auto w-full max-w-[475px] p-1">
                 <Slide data={product}/>
                 <HeaderTiktok data={product}/>
                 <Review data={reviews}/>
