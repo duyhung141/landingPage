@@ -7,6 +7,6 @@ export const getAll = async () => {
 }
 
 export const show = async (id) => {
-    const res = await axios.get(`${API}/api/v1/review/${id}`);
+    const res = await axios.get(`${API}/api/v1/review/product/${id}`);
     return res.data;
 }

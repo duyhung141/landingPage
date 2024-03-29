@@ -1,19 +1,20 @@
 import React from "react"
 import StarIcon from '@mui/icons-material/Star';
-
+import logo from '../../assets/img/logo.webp'
 function InfoShop(){
     const totalProducts= 126;
-    const totalSoldProducts= 12600;
+    const totalSoldProducts= '3427';
     return(
         <>
             <div className="mt-1 p-2">
                 <div className="flex items-center gap-2">
                     <img
-                        src='https://down-vn.img.susercontent.com/file/vn-11134233-7r98o-lqh91p0t6ypjcc_tn'
+                        src={logo}
+                        // src='https://down-vn.img.susercontent.com/file/vn-11134233-7r98o-lqh91p0t6ypjcc_tn'
                         alt={'Hải nam'}
                         className="h-16 w-16 rounded-full"/>
                     <div className="font-semibold">
-                        <p className='font-bold uppercase text-lg'>Hải Nam</p>
+                        <p className='font-bold uppercase text-lg'>Anh Watch Luxury</p>
                         <p className="text-yellow-500 text-sm flex items-center"><StarIcon/> <span className='text-black font-semibold'>4.9</span></p>
                     </div>
                 </div>

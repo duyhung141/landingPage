@@ -70,7 +70,7 @@ function HomePage() {
             const products = await ProductService.getAll();
             setProducts(products?.data);
 
-            const reviews = await ReviewService.getAll();
+            const reviews = await ReviewService.show(id);
             setReviews(reviews);
         }
         fetchData();

@@ -8,8 +8,8 @@ import {formatDate} from "../../functions/helperFunctions";
 function Review(props) {
     const {data} = props;
     const ratings = [
-        {stars: 5, percentage: 0.98},
-        {stars: 4, percentage: 0.02},
+        {stars: 5, percentage: 0.96},
+        {stars: 4, percentage: 0.04},
         {stars: 3, percentage: 0},
         {stars: 2, percentage: 0},
         {stars: 1, percentage: 0},
@@ -40,7 +40,7 @@ function Review(props) {
                                 precision={0.1}
                                 emptyIcon={<StarIcon style={{opacity: 0.5}} fontSize="small"/>}
                             />
-                            <p className='text-sm text-[#A6A6A6]'>(12.8k đánh giá)</p>
+                            <p className='text-sm text-[#A6A6A6]'>(272 đánh giá)</p>
                         </div>
                         <div className="col-span-3 p-1">
                             {(ratings).map((rating) => (

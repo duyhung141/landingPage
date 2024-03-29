@@ -17,7 +17,7 @@ function HeaderTiktok(props) {
                     <div className="flex items-end">
                         <h3><StarIcon style={{color: "#FFDE59"}}/><span className='font-semibold'>4.9/5</span></h3>
                         <p className='ml-1 text-gray-400'>| Đã bán <span
-                            className='text-black font-semibold'>128.8k</span></p>
+                            className='text-black font-semibold'>954</span></p>
                     </div>
                     <div className="flex items-end">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" preserveAspectRatio="none"

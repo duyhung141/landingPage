@@ -24,9 +24,8 @@ function ProductDetail(props) {
                     {/*Product Info*/}
                     <div className="mt-2">
                         <h2 className='font-bold uppercase text-lg my-1'>Mô tả sản phẩm</h2>
-                        <h3 className="text-lg font-semibold">Bột giặt OMO 3.6kg</h3>
                         <article className='text-pretty'>
-                            {data?.description}
+                            <p dangerouslySetInnerHTML={{ __html: data?.description }}></p>
                         </article>
                     </div>
                 </div>
