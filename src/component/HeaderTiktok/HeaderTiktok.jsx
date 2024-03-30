@@ -69,12 +69,11 @@ function HeaderTiktok(props) {
                         bằng tiền mặt (COD)</p>
                 </div>
 
-                <div className="h-28 m-2 border-b">
+                <div className="h-24 m-2 border-b">
                     <h5 className='font-bold'>Vận chuyển</h5>
                     <p className='mt-1'>
                         <span className='mr-1 text-[#5CE1E6] border border-[#5CE1E6] py-1 px-2 font-medium text-xs'>Voucher giảm phí vẫn chuyển</span>
-                        Giảm 30.000đ phí vận
-                        chuyển đối với các đơn hàng có giá trị từ 399.000đ trở lên. Được áp dụng khi mua 2 loa trở lên.
+                        Miễn phí ship toàn quốc. Áp dụng cho mọi đơn hàng
                     </p>
                 </div>
 
