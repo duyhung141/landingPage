@@ -30,22 +30,22 @@ function ProductSuggest(props) {
             name: product?.name,
             image: product?.urlList[0],
             price: product?.price,
-            salePrice: getPriceSale(product?.price, product?.percentSale),
+            salePrice: product?.priceSale,
             soldQuantity: "954"
         }));
     // console.log(products, id)
     return (
         <>
             {/*<div className="grid grid-cols-2">*/}
-            <div className="slider-container">
+            <div className="max-w-[475px] w-full">
                 <Slider {...settings}>
                     {products?.map((product, index) => (
                         <ProductSuggestCard
                             id={product.id}
                             image={product.image}
                             name={product.name}
-                            originalPrice={product.salePrice}
-                            salePrice={product.price}
+                            originalPrice={product.price}
+                            salePrice={product.salePrice}
                             soldQuantity={product.soldQuantity}
                         />
                     ))}

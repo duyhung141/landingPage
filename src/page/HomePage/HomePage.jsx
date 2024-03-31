@@ -16,7 +16,7 @@ function HomePage() {
     const [products, setProducts] = useState();
     const [product, setProduct] = useState();
     const [reviews, setReviews] = useState();
-    const spaceRightWindow = Math.abs(window.innerWidth - 475) / 2;
+    const spaceRightWindow = Math.abs(window.innerWidth - 500) / 2;
     const [showButton, setShowButton] = useState(false);
     const [opacity, setOpacity] = useState(1);
     const orderRef = useRef(null);
@@ -78,7 +78,7 @@ function HomePage() {
     }, [id]);
     return (
         <>
-            <div className="mx-auto w-full max-w-[475px] p-1 relative">
+            <div className="mx-auto w-full max-w-[475px] relative">
                 <Slide data={product}/>
                 <HeaderTiktok data={product}/>
                 <Review data={reviews}/>
@@ -91,7 +91,7 @@ function HomePage() {
                 <button
                     onClick={goToComponent}
                     style={{ right: spaceRightWindow, display: showButton ? 'block' : 'none', opacity: opacity }}
-                    className="fixed bottom-4 mx-auto bg-[#EE4D2D] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded fade-button"
+                    className="fixed bottom-10 mx-auto bg-[#EE4D2D] hover:bg-[#EE4D2D]/80 text-white font-bold py-2 px-4 rounded fade-button"
                 >
                     Mua ngay
                 </button>

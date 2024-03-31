@@ -25,7 +25,7 @@ function ProductDetail(props) {
                     <div className="mt-2">
                         <h2 className='font-bold uppercase text-lg my-1'>Mô tả sản phẩm</h2>
                         <article className='text-pretty'>
-                            <p dangerouslySetInnerHTML={{ __html: data?.description }}></p>
+                            <div style={{ wordBreak:"break-word", padding:"10px" }} dangerouslySetInnerHTML={{ __html: data?.description }}></div>
                         </article>
                     </div>
                 </div>

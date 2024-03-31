@@ -39,7 +39,7 @@ function Slide(props) {
     return (
         <div>
             <div className="mx-auto w-full">
-                <div className="w-full">
+                <div className="">
                     <Slider {...settingsNav1} asNavFor={nav2} ref={slider => (sliderRef1 = slider)}>
                         {
                             data?.urlList?.map((item) => {
@@ -54,27 +54,28 @@ function Slide(props) {
                     </Slider>
                 </div>
 
-                <div className="w-full xxs:grid grid-cols-2 relative -mt-4">
-                    <div className="h-16 bg-[#A62100] p-2 relative">
+                <div className="w-full xxs:grid grid-cols-2 relative -mt-4 xs:mb-3">
+                    <div className="h-20 bg-[#A62100] p-2 relative">
                         <div className="ml-2">
                             <p className='text-xl text-white font-bold text-center xxs:text-start'><span><LoyaltyIcon/></span>{formatMoney(data?.price)}</p>
                         </div>
                         <div className="ml-1 flex items-center justify-center xxs:justify-start">
-                            <p className='text-white line-through decoration-white'>{getPriceSale(data?.price, data?.percentSale)}</p>
+                            {/*<p className='text-white line-through decoration-white'>{getPriceSale(data?.price, data?.percentSale)}</p>*/}
+                            <p className='text-white line-through decoration-white'>{formatMoney(data?.priceSale)}</p>
                             <div className="h-5 w-8 bg-red-500 ml-2"><p
                                 className='text-center text-sm text-white font-semibold'>{data?.percentSale}%</p>
                             </div>
                         </div>
                     </div>
-                    <div className="h-16 bg-yellow-400 relative">
-                        <div className="absolute w-[50%] -left-2 h-20 inset-0 bg-yellow-400 transform xxs:-skew-x-12"></div>
+                    <div className="h-12 bg-yellow-400 relative">
+                        <div className="absolute -left-2 h-20 inset-0 bg-yellow-400 transform xxs:-skew-x-12"></div>
                         <div className="z-10 mx-auto absolute w-full">
                             <div className="text-center">
                                 <p className='font-bold text-lg fade-in-out'>
                                     <span><BoltIcon/></span>Ưu đãi giờ vàng</p>
                             </div>
                             <div className="text-center flex items-center justify-center">
-                                <p className=''>Kết thúc sau</p>
+                                <p className=''>Kết thúc</p>
                                 <BoxTime initialMinutes={48} initialSeconds={39} />
                             </div>
 
