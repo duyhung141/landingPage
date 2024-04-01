@@ -67,7 +67,7 @@ function Slide(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="h-12 bg-yellow-400 relative">
+                    <div className="xs:h-12 h-16 bg-yellow-400 relative">
                         <div className="absolute -left-2 h-20 inset-0 bg-yellow-400 transform xxs:-skew-x-12"></div>
                         <div className="z-10 mx-auto absolute w-full">
                             <div className="text-center">

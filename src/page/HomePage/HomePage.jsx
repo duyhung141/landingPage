@@ -11,6 +11,7 @@ import * as ReviewService from "../../services/ReviewService";
 import {useMutationHooks} from "../../hooks/useMutationHooks";
 import {useParams} from "react-router-dom";
 import './homepage.css'
+
 function HomePage() {
     const {id} = useParams();
     const [products, setProducts] = useState();
@@ -58,7 +59,7 @@ function HomePage() {
     }, []);
 
     const goToComponent = () => {
-        orderRef.current?.scrollIntoView({ behavior: 'smooth' });
+        orderRef.current?.scrollIntoView({behavior: 'smooth'});
     };
 
 
@@ -78,26 +79,30 @@ function HomePage() {
     }, [id]);
     return (
         <>
-            <div className="mx-auto w-full max-w-[475px] relative">
-                <Slide data={product}/>
-                <HeaderTiktok data={product}/>
-                <Review data={reviews}/>
-                <InfoShop/>
-                <ProductDetail data={product}/>
-                <div ref={orderRef} className="my-10">
-                    <Order productId={id} productPrice={product?.price}/>
-                </div>
-                <ProductSuggest data={products}/>
-                <button
-                    onClick={goToComponent}
-                    style={{ right: spaceRightWindow, display: showButton ? 'block' : 'none', opacity: opacity }}
-                    className="fixed bottom-10 mx-auto bg-[#EE4D2D] hover:bg-[#EE4D2D]/80 text-white font-bold py-2 px-4 rounded fade-button"
-                >
-                    Mua ngay
-                </button>
+            {product &&
+                <>
+                    <div className="mx-auto w-full max-w-[475px] relative">
+                        <Slide data={product}/>
+                        <HeaderTiktok data={product}/>
+                        <Review data={reviews}/>
+                        <InfoShop/>
+                        <ProductDetail data={product}/>
+                        <div ref={orderRef} className="my-10">
+                            <Order productId={id} productPrice={product?.price}/>
+                        </div>
+                        <ProductSuggest data={products}/>
+                        <button
+                            onClick={goToComponent}
+                            style={{right: spaceRightWindow, display: showButton ? 'block' : 'none', opacity: opacity}}
+                            className="fixed bottom-10 mx-auto bg-[#EE4D2D] hover:bg-[#EE4D2D]/80 text-white font-bold py-2 px-4 rounded fade-button"
+                        >
+                            Mua ngay
+                        </button>
 
 
-            </div>
+                    </div>
+                </>
+            }
         </>
     )
 }
