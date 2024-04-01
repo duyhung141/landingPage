@@ -57,11 +57,11 @@ function Slide(props) {
                 <div className="w-full xxs:grid grid-cols-2 relative -mt-4 xs:mb-3">
                     <div className="h-20 bg-[#A62100] p-2 relative">
                         <div className="ml-2">
-                            <p className='text-xl text-white font-bold text-center xxs:text-start'><span><LoyaltyIcon/></span>{formatMoney(data?.price)}</p>
+                            <p className='text-xl text-white font-bold text-center xxs:text-start'><span><LoyaltyIcon/></span>{formatMoney(data?.priceSale)}</p>
                         </div>
                         <div className="ml-1 flex items-center justify-center xxs:justify-start">
                             {/*<p className='text-white line-through decoration-white'>{getPriceSale(data?.price, data?.percentSale)}</p>*/}
-                            <p className='text-white line-through decoration-white'>{formatMoney(data?.priceSale)}</p>
+                            <p className='text-white line-through decoration-white'>{formatMoney(data?.price)}</p>
                             <div className="h-5 w-8 bg-red-500 ml-2"><p
                                 className='text-center text-sm text-white font-semibold'>{data?.percentSale}%</p>
                             </div>
