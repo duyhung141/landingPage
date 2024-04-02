@@ -31,7 +31,7 @@ function ProductSuggest(props) {
             image: product?.urlList[0],
             price: product?.price,
             salePrice: product?.priceSale,
-            soldQuantity: "954"
+            soldQuantity: product?.soldQuantity
         }));
     // console.log(products, id)
     return (
